@@ -1,0 +1,46 @@
+[project]
+name = "raft"
+version = "0.1.0"
+requires-python = ">=3.10,<3.13"
+readme = "README.md"
+authors = [
+    { name = "rtarun1", email = "tarun.ramak@gmail.com" }
+]
+dependencies = [
+    "pycocotools",
+    "psutil",
+    "huggingface_hub",
+    "dacite",
+    "omegaconf",
+    "einops",
+    "filelock",
+    "gdown",
+    "joblib",
+    "matplotlib",
+    "numpy>=2",
+    "opencv-python",
+    "Pillow",
+    "rerun-sdk==0.26.2",
+    "ruamel.yaml",
+    "scikit-image",
+    "timm==1.0.8",
+    "torch>=2.10",
+    "torchvision",
+    "tqdm",
+    "scipy"
+]
+
+[tool.pixi.workspace]
+channels = ["conda-forge", "pytorch", "nvidia"] 
+platforms = ["linux-64"]
+
+[tool.pixi.pypi-dependencies]
+raft = { path = ".", editable = true }
+
+[tool.pixi.dependencies]
+pip = ">=26.2.1,<27"
+setuptools = ">=64,<82"
+ruff = ">=0.14.0,<0.15"
+libopencv = ">=4.12,<5"
+opencv = ">=4.12,<5"
+pillow = "*"
